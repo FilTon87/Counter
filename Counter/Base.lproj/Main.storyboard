@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olG-Rc-wRy">
+                                <rect key="frame" x="16" y="128" width="361" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1i-UE-cQq">
+                                <rect key="frame" x="147" y="206" width="99" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="medium">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="counterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7do-Ha-eBk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXI-zj-0cS">
+                                <rect key="frame" x="25" y="284" width="100" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPlusDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyt-Ih-HGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAq-ot-zv0">
+                                <rect key="frame" x="277" y="284" width="100" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonMinusDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RFN-zk-MMi"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-Uf-dFR">
+                                <rect key="frame" x="25" y="379" width="343" height="72"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hT-k8-stT">
+                                <rect key="frame" x="172" y="283" width="49.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="0.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="buttonZeroingDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTg-UH-UQL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1hT-k8-stT" secondAttribute="trailing" constant="171.33333333333334" id="04n-uZ-H0d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qXI-zj-0cS" secondAttribute="trailing" constant="268" id="3c1-nH-iyg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ucx-Uf-dFR" secondAttribute="trailing" constant="25" id="90m-wt-klQ"/>
+                            <constraint firstItem="ucx-Uf-dFR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="AzC-lR-BQw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OAq-ot-zv0" secondAttribute="trailing" constant="16" id="BJ1-wr-gMf"/>
+                            <constraint firstItem="olG-Rc-wRy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dbj-dt-UDT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OAq-ot-zv0" secondAttribute="bottom" constant="499" id="DjW-fr-mcd"/>
+                            <constraint firstItem="olG-Rc-wRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="DqU-OB-FFX"/>
+                            <constraint firstItem="qXI-zj-0cS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="225" id="Eru-U5-F2Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1hT-k8-stT" secondAttribute="bottom" constant="500" id="IDN-Hn-6Ws"/>
+                            <constraint firstItem="OAq-ot-zv0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="225" id="KJ6-GN-8hB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1i-UE-cQq" secondAttribute="trailing" constant="147" id="MBJ-ZD-NAg"/>
+                            <constraint firstItem="v1i-UE-cQq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="UQG-d8-3X7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="olG-Rc-wRy" secondAttribute="trailing" constant="16" id="XXS-xV-fC7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ucx-Uf-dFR" secondAttribute="bottom" constant="367" id="bg3-r1-kQE"/>
+                            <constraint firstItem="1hT-k8-stT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="224" id="crM-nb-vGh"/>
+                            <constraint firstItem="1hT-k8-stT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="172" id="i0X-LI-pog"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="olG-Rc-wRy" secondAttribute="bottom" constant="647" id="jbJ-Kc-LeF"/>
+                            <constraint firstItem="v1i-UE-cQq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="lf4-C3-GnE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v1i-UE-cQq" secondAttribute="bottom" constant="577" id="nR0-hF-iyr"/>
+                            <constraint firstItem="qXI-zj-0cS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="oI0-Wr-83V"/>
+                            <constraint firstItem="OAq-ot-zv0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="277" id="tcz-ic-h2v"/>
+                            <constraint firstItem="ucx-Uf-dFR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="320" id="vxk-KJ-8tS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qXI-zj-0cS" secondAttribute="bottom" constant="499" id="xeA-gB-RWh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changesHistory" destination="ucx-Uf-dFR" id="2jx-Rc-wXe"/>
+                        <outlet property="counterButton" destination="v1i-UE-cQq" id="cpO-U6-uQV"/>
+                        <outlet property="counterButtonMinus" destination="OAq-ot-zv0" id="kCC-Vd-eFu"/>
+                        <outlet property="counterButtonPlus" destination="qXI-zj-0cS" id="o1H-wV-xiA"/>
+                        <outlet property="counterButtonZeroing" destination="1hT-k8-stT" id="gim-cG-Jek"/>
+                        <outlet property="counterLabel" destination="olG-Rc-wRy" id="BhA-7m-72k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="0.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
